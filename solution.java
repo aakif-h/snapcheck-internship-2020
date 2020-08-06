@@ -16,29 +16,19 @@ public class Main
 	    double sqrt = Math.sqrt(s.length());
 	    int rows = (int)(Math.floor(sqrt));
 	    int cols = (int)(Math.ceil(sqrt));
-	    
-	    char[][] matrix = new char[rows][cols];
-	    int k = 0;
-	    for (int i = 0; i < rows; i++) {
-	        for (int j = 0; j < cols; j++) {
-	            if (k >= s.length()) {
-	                break;
-	            }
-	            matrix[i][j] = s.charAt(k++);
-	        }
-	    }
-
-	    String res = "";
-	    for (int c = 0; c < cols; c++) {
-	        for (int r = 0; r < rows; r++) {
-	            if (matrix[r][c] == '\0') {
-	                break;
-	            }
-	            res += matrix[r][c];
-	        }
-	        res += ' ';
-	    }
-	    
-	    return res;
+	    if (rows != cols) {
+            rows++; // make the "matrix" NxN instead of (N-1)xN
+        }
+		
+        String res = "";
+        for (int c = 0; c < cols; c++) {
+            for (int r = 0; r < rows; r++) {
+                if (c + r*cols < s.length()) {
+                    res += s.charAt(c + r*cols);
+                }
+            }
+            res += ' ';
+        }
+        return res;
 	}
 }
