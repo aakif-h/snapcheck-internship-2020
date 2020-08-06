@@ -8,6 +8,6 @@ indices in place, rather than using a matrix buffer.
 Two of the mentioned inputs in the ChallengeDescription.md file were tested, and their outputs
 have been posted below.
 
-<img src="testcase-1.png.PNG">
+<img src="testcase-1.PNG">
 
-<img src="testcase-2.png.PNG">
+<img src="testcase-2.PNG">
